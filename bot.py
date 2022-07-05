@@ -98,5 +98,41 @@ async def unban(ctx, member:discord.User, *, reason=None):
     await ctx.send(embed=embed)
     await ctx.message.delete()
     print(f"Sucsessfully unbanned {member.name}")
+   
+@commands.has_permissions(ban_members=True)
+@bot.command(name = 'mute', help = 'ADMIN ONLY mutes a member !mute <member name> <reason>')
+async def mute(ctx, member:discord.User, *, reason=None):
+    if reason == None:
+        reason = f"No Reason Provided"
+    await ctx.send(f"{member.mention} has been **Muted**", delete_after=15)
+    embed = discord.Embed(title="Mute Log", description=f"{member.mention} has been **Muted** by {ctx.author.mention}\n\nReason: `{reason}`\n\nMuted in: `{ctx.guild.name}`", color=0x1355ed)
+    embed.add_field(name="User", value=f"{member}", inline=True)
+    embed.add_field(name="UserID", value=f"{member.id}", inline=True)
+    embed.add_field(name="Moderator", value=f"{ctx.author}", inline=True)
+    embed.set_footer(text=f"Mute log - Muted user: {member.name}")
+    embed.set_thumbnail(url=member.avatar_url)
+    embed.timestamp = datetime.datetime.utcnow()
+    await ctx.send(embed=embed)
+    await ctx.message.delete()
+    await user.edit(mute=True)
+    print(f"Sucsessfully muted {member.name}")
+    
+@commands.has_permissions(ban_members=True)
+@bot.command(name = 'unmute', help = 'ADMIN ONLY unmutes a member !unmute <member name> <reason>')
+async def unmute(ctx, member:discord.User, *, reason=None):
+    if reason == None:
+        reason = f"No Reason Provided"
+    await ctx.send(f"{member.mention} has been **Unmuted**", delete_after=15)
+    embed = discord.Embed(title="Unmute Log", description=f"{member.mention} has been **Unmuted** by {ctx.author.mention}\n\nReason: `{reason}`\n\nUnmuted in: `{ctx.guild.name}`", color=0x1355ed)
+    embed.add_field(name="User", value=f"{member}", inline=True)
+    embed.add_field(name="UserID", value=f"{member.id}", inline=True)
+    embed.add_field(name="Moderator", value=f"{ctx.author}", inline=True)
+    embed.set_footer(text=f"Mute log - Muted user: {member.name}")
+    embed.set_thumbnail(url=member.avatar_url)
+    embed.timestamp = datetime.datetime.utcnow()
+    await ctx.send(embed=embed)
+    await ctx.message.delete()
+    await user.edit(mute=False)
+    print(f"Sucsessfully muted {member.name}")
 
 bot.run(token)
