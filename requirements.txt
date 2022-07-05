@@ -46,5 +46,3 @@ typing_extensions==4.2.0
 urllib3==1.26.5
 yarl==1.7.2
 zipp==1.0.0
-
-discord===5.15.0-39
