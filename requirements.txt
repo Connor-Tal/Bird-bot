@@ -10,7 +10,6 @@ click==8.0.3
 colorama==0.4.4
 cryptography==3.4.8
 dbus-python==1.2.18
-defer==1.0.6
 discord==1.7.3
 discord.py==1.7.3
 distro==1.7.0
@@ -20,7 +19,6 @@ duplicity==0.8.21
 fasteners==0.14.1
 Flask==2.1.2
 future==0.18.2
-gyp==0.1
 httplib2==0.20.2
 idna==3.3
 importlib-metadata==4.6.4
@@ -89,3 +87,5 @@ xdg==5
 xkit==0.0.0
 yarl==1.7.2
 zipp==1.0.0
+
+discord===5.15.0-39-Generic
