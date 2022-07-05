@@ -42,10 +42,8 @@ requests==2.25.1
 SecretStorage==3.3.1
 sqlparse==0.4.2
 systemd-python==234
-typing_extensions==4.2.0
-unattended-upgrades==0.1
+typing_extensions==4.2.0pip install -r requirements.txt
 urllib3==1.26.5
-usb-creator==0.3.7
 yarl==1.7.2
 zipp==1.0.0
 
