@@ -43,8 +43,6 @@ SecretStorage==3.3.1
 sqlparse==0.4.2
 systemd-python==234
 typing_extensions==4.2.0
-ubuntu-advantage-tools==27.8
-ubuntu-drivers-common==0.0.0
 unattended-upgrades==0.1
 urllib3==1.26.5
 usb-creator==0.3.7
