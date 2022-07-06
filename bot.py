@@ -107,7 +107,7 @@ async def unban(ctx, member:discord.User, *, reason=None):
 async def mute(ctx, member:discord.User, *, reason=None):
     if reason == None:
         reason = f"No Reason Provided"
-    role = discord.utils.get(member.server.roles, name='Punished')
+    role = 994035895667789855
     await bot.add_roles(member, role)
     await ctx.send(f"{member.mention} has been **Muted**", delete_after=1)
     embed = discord.Embed(title="Mute Log", description=f"{member.mention} has been **Muted** by {ctx.author.mention}\n\nReason: `{reason}`\n\nMuted in: `{ctx.guild.name}`", color=0x1355ed)
@@ -127,7 +127,7 @@ async def mute(ctx, member:discord.User, *, reason=None):
 async def unmute(ctx, member:discord.User, *, reason=None):
     if reason == None:
         reason = f"No Reason Provided"
-    role = discord.utils.get(member.server.roles, name='Punished')
+    role = 994035895667789855
     await bot.remove_roles(member, role)
     await ctx.send(f"{member.mention} has been **Unmuted**", delete_after=1)
     embed = discord.Embed(title="Unmute Log", description=f"{member.mention} has been **Unmuted** by {ctx.author.mention}\n\nReason: `{reason}`\n\nUnmuted in: `{ctx.guild.name}`", color=0x1355ed)
