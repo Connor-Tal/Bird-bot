@@ -26,11 +26,16 @@ async def on_member_join(member):
 
 @bot.command(name = 'roll', help = 'Simulates rolling dice. !roll <number of dice>, <number or sides> ')
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
-    dice = [
-        str(random.choice(range(1, number_of_sides + 1)))
-        for _ in range(number_of_dice)
-    ]
-    await ctx.send(', '.join(dice))
+    if number_of_dice >= '100':
+        await ctx.send("Number too large")
+    if number_of_sides >= '1000000':
+        await ctx.send("Number too large")
+    else:
+        dice = [
+            str(random.choice(range(1, number_of_sides + 1)))
+            for _ in range(number_of_dice)
+        ]
+        await ctx.send(', '.join(dice))
 
 @bot.command(name = 'hello', help = 'Says hello. !hello')
 async def hello(ctx):
@@ -148,8 +153,8 @@ if member = '989649632495808582'
     birdxp = birdxp + 1
 
 @bot.command(name= 'Level', help=  'Shows the level of the user !level'
-async def levelshow(ctx,member)
-    if member = '989649632495808582'
+async def levelshow(ctx,member):
+    if member = '989649632495808582':
         await ctx.send(member,"level:",birdxp)
              
 bot.run(token)
