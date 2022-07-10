@@ -43,7 +43,6 @@ async def hello(ctx):
 @bot.command(name = 'ping', help = 'pong! !ping')
 async def ping(ctx):
     await ctx.send('Pong!')
-    await ctx.sent('/nick a')
 
 @commands.has_permissions(ban_members=True)
 @bot.command(name = 'ban', help = 'ADMIN ONLY bans a person !ban <member name> <reason>')
@@ -140,7 +139,17 @@ async def unmute(ctx, member:discord.User, *, reason=None):
     await ctx.send(embed=embed,delete_after=1)
     await ctx.message.delete()
     await ctx.message.delete()
-    await user.edit(mute=False)
     print(f"Sucsessfully muted {member.name}")
+ 
+@bot.on_message
+async def level(ctx,member)
+if member = '989649632495808582'
+    gloabal birdxp
+    birdxp = birdxp + 1
 
+@bot.command(name= 'Level', help=  'Shows the level of the user !level'
+async def levelshow(ctx,member)
+    if member = '989649632495808582'
+        await ctx.send(member,"level:",birdxp)
+             
 bot.run(token)
